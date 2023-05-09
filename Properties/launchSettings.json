@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "tiff_convert_demo": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7197",
+      "launchBrowser": false
+    }
+  }
+}
