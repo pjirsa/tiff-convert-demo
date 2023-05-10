@@ -39,16 +39,9 @@ public class TiffToPng
 
     private byte[] ConvertToPng(byte[] tiff)
     {
-        using (MemoryStream memStream = new MemoryStream(tiff))
-        {
-            using (MagickImage image = new MagickImage(tiff))
-            {
-                image.Format = MagickFormat.Png;
-                image.Write(memStream);
-            }
-
-            return memStream.ToArray();
-        }
+        using var image = new MagickImage(tiff);
+        image.Format = MagickFormat.Png;
+        return image.ToByteArray();
     }
 }
 
